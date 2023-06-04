@@ -1,6 +1,14 @@
 
-# Módulo 06 - PROYECTO FINAL REACT (AVANCE HITO 2)
+# Módulo 06 - PROYECTO FINAL REACT (HITO 3)
 ## Desafío: Desarrollo de sitio tipo Marketplace usando React y MUI.
-## HITO 2: Creación de vistas definidas en el HITO 1, se establece la reutilización de componentes de cards de productos para sección galería y favoritos del usuario, y para publicaciones en el dashboard y carrito de compra. Uso de Router para navegación entre rutas.
-
 ## Build: https://avance-desafio-final-inblue.netlify.app/
+### HITO 3: Desarrollo de lógica para:
+### ·  Filtrado de publicaciones (lista de productos) por nombre.
+### ·  Ordenamiento de publicaciones (lista de productos) por selección del usuario (orden alfabético - precio)
+### ·  Validación de campos en formularios (tipo email, comparación de contraseñas, limite de caracteres en nombre de usuario, inputs vacios )
+### ·  Redirección al usuario al intentar acceder a vistas privadas y no tenga una sesión activa.
+### ·  Guardar publicaciones como favoritas y administrar favoritos del usuario.
+### ·  Creación y edición de nuevas publicaciones por parte del usuario.
+### ·  Modificacion y actualización de datos de usuario.
+### ·  Añadir y organizar productos en carrito de compra.
+
