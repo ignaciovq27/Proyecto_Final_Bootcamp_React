@@ -1,0 +1,13 @@
+.imgBorderRadius {
+    border-radius: 5%;
+}
+
+.imgShadow {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.imgSize {
+    width: 90%;
+    min-width: 100px;
+    max-width: 360px;
+}

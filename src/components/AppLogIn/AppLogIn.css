@@ -1,0 +1,27 @@
+.divTextField-style {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.hr-style2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 200px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.link-style {
+    transition: transform 0.05s ease;
+}
+
+.link-style:hover {
+    /* color: #1D71B8; */
+    /* color: #3793de; */
+    color: #0e5895;
+    transform: scale(1.04)
+}

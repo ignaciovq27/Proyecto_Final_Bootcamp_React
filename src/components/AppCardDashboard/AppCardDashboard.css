@@ -1,0 +1,24 @@
+.boxContainer-style {
+    display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin: auto !important;
+}
+
+.dasboardCard-style {
+    padding: 10px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    margin: 0 !important;
+    border: solid 2px rgb(232, 234, 235);
+    border-radius: 10px;
+    /* margin: 0 !important; */
+    /* background-color: black; */
+}
+
+.productName-style {
+    width: 200px; /* Establece el ancho deseado para el typography */
+    overflow: hidden; /* Oculta el texto si se desborda del ancho */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) si el texto se desborda */
+  }

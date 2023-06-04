@@ -1,0 +1,15 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); */
+
+/* .button-style{
+    font-family: 'Righteous';
+    font-weight: lighter;
+} */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    background-color: rgb(250, 252, 253);
+    /* background-color: rgb(246, 249, 252); */
+}
