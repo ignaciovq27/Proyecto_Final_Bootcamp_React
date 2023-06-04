@@ -20,12 +20,9 @@ export function ProductContext({ children }) {
             const url = "/products.json"
             const response = await fetch(url)
             const productsData = await response.json()
-            console.log("JSON products data: ")
-            console.log(productsData)
             setProducts(productsData)
         }
         catch (error) {
-            console.log(error)
         }
     }
 
@@ -46,7 +43,6 @@ export function ProductContext({ children }) {
     const deleteProduct = id => {
         const newProducts = products.filter(product => product.id !== id)
         setProducts(newProducts)
-        console.log(products)
     }
 
     const editProduct = newProduct => {

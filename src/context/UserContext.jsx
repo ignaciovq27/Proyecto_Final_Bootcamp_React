@@ -13,7 +13,6 @@ const getUsersData = async () => {
         return usersData;
     }
     catch (error) {
-        console.log(error)
     }
 }
 
@@ -44,18 +43,13 @@ export function UserContext({ children }) {
     const logIn = async (userEmail, userPassword) => {
 
         const users = await getUsersData()
-        console.log("JSON users registrados: ")
-        console.log(users)
         const userDB = users.find(
             (item) => item.email === userEmail && item.password === userPassword
         );
         if (userDB) {
-            console.log("usuario encontrado: ");
-            console.log(userDB);
             setUser(userDB);
         } else {
             setUser(null)
-            console.log("usuario no encontrado -----");
         }
         return userDB;
     }
@@ -67,15 +61,12 @@ export function UserContext({ children }) {
         setPassword("")
         setPasswordRepeat("")
         setProfileImg("/imgs/User_Profile_Img_00.png")
-        console.log("userStates cleaned")
         setUser(null)
-        console.log("user logOut.")
     }
 
     const compararInfoUsuarLogIn = async (email, password, setEmailError, setPasswordError) => {
         try {
             const usersData = await getUsersData()
-            console.log(usersData)
             const user = usersData[1];
 
             if (email !== user.email) {
@@ -96,7 +87,6 @@ export function UserContext({ children }) {
             }
 
         } catch (error) {
-            console.log(error);
         }
     };
     
