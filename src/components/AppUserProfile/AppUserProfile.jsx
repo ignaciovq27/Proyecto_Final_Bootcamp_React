@@ -2,11 +2,10 @@
 import "./AppUserProfile.css"
 
 //components
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { useContext } from "react";
 import { ContextUser } from '../../context/UserContext';
-import { useNavigate } from 'react-router-dom';
 
 import { Box, IconButton, InputAdornment, Typography } from "@mui/material";
 import { Button } from "@mui/material";
@@ -22,8 +21,6 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import CardActions from '@mui/material/CardActions';
 
 export default function AppUserProfile() {
     const { user } = useContext(ContextUser);
@@ -46,7 +43,6 @@ export default function AppUserProfile() {
                     pb: "15px",
                     fontSize: { xs: "28px", sm: "30px", md: "34px" }
                 }}
-            // className=''
             >✧ MI PERFIL ✧
             </Typography>
             <Card
@@ -68,13 +64,11 @@ export default function AppUserProfile() {
                     sx={{
                         m: "0", p: "0",
                     }}
-                // className="userCard-style"
                 >
                     <Box
                         sx={{
                             '& .MuiTextField-root': { m: 1, width: { sx: "10ch", sm: "30ch", md: "40ch" } },
                             display: "flex",
-                            // display: { md: 'flex' },
                         }}
                         flexDirection={"column"}
                         justifyContent={"center"}
@@ -84,7 +78,6 @@ export default function AppUserProfile() {
                         <Typography
                             variant="h6"
                             color="secondary"
-                            // className=''
                             sx={{
                                 pt: "20px",
                                 display: "flex",
@@ -93,13 +86,11 @@ export default function AppUserProfile() {
                             }}
                         ><b> HOLA {user.name.toUpperCase()}</b> <AutoAwesomeIcon sx={{
 
-                            // ><b> HOLA {nameInUpperCase}</b> <AutoAwesomeIcon sx={{
                             ml: "5px",
                         }} />
                         </Typography>
 
                         <AppImg
-                            // src="\imgs\User_Profile_Img_00.png"
                             src={user.profileImg}
                             alt="User_Profile_Img_00.png"
                             width="140px"
@@ -107,11 +98,8 @@ export default function AppUserProfile() {
                         />
 
                         <Typography
-                            // variant="h6"
                             color="secondary"
-                            // className=''
                             sx={{
-                                // pt: "20px",
                                 display: "flex",
                                 justifyContent: "center",
                                 alignItems: "center"
@@ -162,9 +150,7 @@ export default function AppUserProfile() {
                         <div>
 
                             <Typography
-                                // variant="h6"
                                 color="secondary"
-                                // className=''
                                 sx={{
                                     pt: "5px",
                                     display: "flex",
@@ -185,7 +171,6 @@ export default function AppUserProfile() {
                                     variant="outlined"
                                     disabled
                                     error={false}
-                                    // value={userName} 
                                     defaultValue={user.name}
                                     color="primary"
                                 />
@@ -200,10 +185,8 @@ export default function AppUserProfile() {
                                     label="CORREO ELECTRÓNICO"
                                     type="email"
                                     variant="outlined"
-                                    // required
                                     disabled
                                     error={false}
-                                    // value={userEmail}
                                     defaultValue={user.email}
                                     color="primary"
                                 />
@@ -220,7 +203,6 @@ export default function AppUserProfile() {
                                     variant="outlined"
                                     disabled
                                     error={false}
-                                    // value={userPassword}
                                     defaultValue={user.password}
                                     color="primary"
                                 />

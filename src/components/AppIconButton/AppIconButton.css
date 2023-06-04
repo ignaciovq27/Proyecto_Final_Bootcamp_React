@@ -1,15 +1,10 @@
 .IconButton-style {
     text-align: center;
     color: white !important;
-    /* background-color: white !important; */
 }
 
 .IconButton-style:hover {
     border-radius: 25px !important;
-    /* background-color: rgb(35, 102, 156) !important; */
     background-color: rgb(20, 79, 128) !important;
     font-weight: 600 !important;
-    /* background-color: #292829 !important; */
-    /* background-color: #606060 !important; */
-    /* background-color: #606060 !important; */
 }

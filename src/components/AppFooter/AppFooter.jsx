@@ -4,8 +4,7 @@ import "./AppFooter.css"
 //components
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Box, Divider, Grid } from '@mui/material';
-import { Link, NavLink } from 'react-router-dom';
+import { Box, Grid } from '@mui/material';
 import Button from '@mui/material/Button';
 import AppImg from "../AppImg/AppImg";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -55,7 +54,6 @@ export default function AppFooter() {
                                         display: { xs: 'flex', sm: 'flex' },
                                         gap: 0.5,
                                         mt: "10px",
-                                        // mb: "10px",
                                     }}
                                     textAlign={"center"}
                                 >¿AÚN NO ERES PARTE DE LA COMUNIDAD?
@@ -68,12 +66,9 @@ export default function AppFooter() {
                                         textJustify: "initial",
                                         mt: "10px",
                                     }}
-                                // className=''
                                 >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit amet loremter.
                                 </Typography>
                                 <Typography
-                                    // component={Link}
-                                    // to="/login"
                                     variant="a"
                                     sx={{
                                         m: 0,
@@ -104,7 +99,6 @@ export default function AppFooter() {
                                 textAlign={"center"}
                             >
                                 <AppImg
-                                    // to="/"
                                     src="\imgs\Logo_02.png"
                                     alt="Logo_02"
                                     width="220px"

@@ -2,10 +2,10 @@
 import "./AppCardDashboard.css"
 
 //components
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 
-import { Box, Chip, IconButton, InputAdornment, Typography, autocompleteClasses } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
@@ -18,12 +18,8 @@ export default function AppCardDashboard({
     dashboardProductTitle,
     dashboardProductImg,
     to,
-    // dashboardOnClickEdit,
     dashboardOnClickDelete,
 }) {
-
-    const pollo = "( °)> "
-    const [count, setCount] = useState(0)
 
     return (
         <>
@@ -36,9 +32,6 @@ export default function AppCardDashboard({
                     alignContent: "center",
                     m: "auto",
                     mt: "20px",
-                    // mx: 20,
-                    // mb: "40px",
-                    // Width: { xs: "330px", sm: "600px", md: "700px", lg: "1200px" },
                     borderRadius: "10px",
                 }}
 
@@ -47,7 +40,6 @@ export default function AppCardDashboard({
                     sx={{
                         display: "flex",
                         flexDirection: { xs: "column", sm: "row" },
-                        // width: "840px",
                         maxWidth: { xs: "280px", sm: "700px", md: "880px", lg: "1040px" },
                     }}
                     className="dasboardCard-style"
@@ -61,7 +53,6 @@ export default function AppCardDashboard({
                         justifyContent={"center"}
                         alignItems={"center"}
                         textAlign={"center"}
-                    // className="boxContainer-style"
                     >
                         <Box
                             sx={{
@@ -90,8 +81,6 @@ export default function AppCardDashboard({
                                 sx={{
                                     fontWeight: "bold",
                                     fontSize: "18px",
-                                    // mr: 10,
-                                    // ml: 2,
                                     py: 1,
                                     px: 1,
                                     textAlign: { xs: "center", sm: "center", md: "center", lg: "left" },
@@ -108,11 +97,6 @@ export default function AppCardDashboard({
                                 flexDirection: { xs: "column", sm: "row" },
                                 justifyContent: "center",
                                 alignItems: "center,"
-                                // my: "20px",
-                                // mb: "20px",
-                                // pb: "20px",
-                                // mx: "10px",
-                                // m: "auto",
                             }}
                         >
                             <Button
@@ -126,12 +110,9 @@ export default function AppCardDashboard({
                                     py: 1.5,
                                     width: "160px",
                                 }}
-                                // onClick={dashboardOnClickEdit}
                                 endIcon={<EditIcon />}> EDITAR
                             </Button>
                             <Button
-                                // component={Link}
-                                // to="/user-dashboard"
                                 variant="outlined"
                                 size="small"
                                 sx={{

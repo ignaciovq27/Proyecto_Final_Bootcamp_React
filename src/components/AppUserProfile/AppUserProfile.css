@@ -1,6 +1,4 @@
 .link-style:hover {
-    /* color: #1D71B8; */
-    /* color: #3793de; */
     color: #0e5895;
     transform: scale(1.04)
 }
@@ -8,19 +6,11 @@
 .userProfileImg-style {
     background-color: white;
     border-radius: 50%;
-    /* border: solid 4px #292829; */
-    /* border: solid 4px #545353; */
     border: solid 4px #2e2e2e;
-    /* border: solid 4px rgb(232, 234, 235); */
     overflow: hidden;
-    /* margin-top: 25px; */
     margin-top: 10px;
     margin-bottom: 5px;
     margin-left: 10px;
     margin-right: 10px;
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
 }
-
-/* .userCard-style {
-    padding: 0 !important;
-} */

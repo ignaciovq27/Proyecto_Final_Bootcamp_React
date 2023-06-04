@@ -2,7 +2,6 @@
 import "../Home/Home.css"
 
 //components
-// import Gallery from "../../components/Gallery/Gallery";
 import AppTitle from "../../components/AppTitle/AppTitle";
 import AppHeader from "../../components/AppHeader/AppHeader";
 import AppSection from "../../components/AppSection/AppSection";

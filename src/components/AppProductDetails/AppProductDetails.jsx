@@ -1,21 +1,14 @@
 import "./AppProductDetails.css";
 
-import { Link, NavLink } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { ContextUser } from '../../context/UserContext';
 import { ContextProduct } from "../../context/ProductContext";
 
 import {
-    Box, Typography,
-    Button,
-    Grid,
-} from "@mui/material";
-import AppImg from "../AppImg/AppImg";
+    Box, Typography, Button, Grid, } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 import Card from '@mui/material/Card';
@@ -27,7 +20,6 @@ export default function AppProductDetails({
     productId,
     productUser,
     productTitle,
-    productCategory,
     productPrice,
     productImg,
     productDescription,
@@ -40,10 +32,7 @@ export default function AppProductDetails({
     const {
         products,
         cartItems,
-        setCartItems,
-        cartAmount,
         setCartAmount,
-        productsCount,
         setProductsCount,
         addProductToCart,
     } = useContext(ContextProduct);
@@ -74,7 +63,6 @@ export default function AppProductDetails({
                 const HandleOnClick = (e) => {
                     setCartAmount((cartAmount) => cartAmount + (product.price * count));
                     setProductsCount((productsCount) => productsCount + count);
-                    // setShowModal(true)
                     addProductToCart(
                         product.id,
                         product.img,
@@ -86,9 +74,6 @@ export default function AppProductDetails({
                     );
                 };
                 if (product.id === productId) {
-                    // const productInCart = cartItems.find(item => item.id === productId);
-                    // const productOnCartQuantity = productInCart ? productInCart.cartQuantity : 0;
-
                     return (
                         <div key={product.id}>
                             <Typography

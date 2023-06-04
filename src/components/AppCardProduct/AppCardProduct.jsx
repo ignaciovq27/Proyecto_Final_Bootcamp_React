@@ -2,21 +2,18 @@
 import './AppCardProduct.css'
 
 //components
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { ContextUser } from '../../context/UserContext';
 import { ContextFavourite } from '../../context/FavouriteContext';
 
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import IconButton from '@mui/material/IconButton';
 import { Box, Divider } from "@mui/material";
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import CardActions from '@mui/material/CardActions';
 
 export default function AppCardProduct({
     productId,
@@ -59,11 +56,8 @@ export default function AppCardProduct({
                         color="primary"
                         disabled={!user}
                         onClick={onClickFavourite}
-                    // color="secondary"
                     >
                         {favouriteIconShow}
-                        {/* <FavoriteIcon size="large" /> */}
-                        {/* <FavoriteBorderIcon size="large" /> */}
                     </IconButton>
                 </Box>
                 <Typography
@@ -75,7 +69,6 @@ export default function AppCardProduct({
                     <CardMedia
                         component="img"
                         sx={{
-                            // width: { xs: 200, sm: 200, md: 200, lg: 180 },
                             width: "60%",
                             mx: "auto", px: 1,
                         }}
@@ -88,13 +81,11 @@ export default function AppCardProduct({
                         className="cardContent-style"
                     >
                         <Typography
-                            // variant="h6"
                             color="primary"
                             sx={{
                                 textAlign: { xs: "center", sm: "center", md: "center" },
                                 fontSize: "12px",
                             }}
-                        // className=''
                         >{productUser}
                         </Typography>
                         <Typography
@@ -110,12 +101,9 @@ export default function AppCardProduct({
                         </Typography>
                         <Typography
                             disabled={false}
-                            // variant="h5"
                             color="secondary"
                             sx={{
                                 textAlign: "center",
-                                // textJustify: "inter-word",
-                                // mt: "20px",
                                 mt: "5px",
                                 mb: "5px",
                             }}
@@ -126,12 +114,10 @@ export default function AppCardProduct({
                             variant="h5"
                             color="primary"
                             sx={{
-                                // fontWeight: "bold",
                                 fontWeight: "600",
                                 textAlign: { xs: "center", sm: "center", md: "center" },
                                 fontSize: "30px"
                             }}
-                        // className=''
                         >{productPrice}
                         </Typography>
                     </CardContent>

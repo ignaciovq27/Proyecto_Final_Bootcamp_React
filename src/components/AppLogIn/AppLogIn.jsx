@@ -2,7 +2,7 @@
 import "./AppLogIn.css"
 
 //components
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { useContext } from "react";
 import { ContextUser } from '../../context/UserContext';
@@ -32,7 +32,6 @@ export default function AppLogIn() {
         compararInfoUsuarLogIn } = useContext(ContextUser);
 
     const navigate = useNavigate()
-    // console.log(user)
 
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
@@ -40,14 +39,9 @@ export default function AppLogIn() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("mail ingresado: " + email)
-        console.log("password ingresado: " + password)
         const user = await logIn(email, password)
         if (user) {
             setName(user.name)
-            console.log("Ingresó usuario: " + user.name)
-            // setEmail(""); //resetear info de user mail
-            // setPassword(""); //resetear info de user password
             return navigate("/user-profile")
         }
 
@@ -77,11 +71,8 @@ export default function AppLogIn() {
                 justifyContent={"center"}
                 alignItems={"center"}
                 textAlign={"center"}
-            // noValidate
-            // autoComplete="off"
             >
                 <AppImg
-                    // to="/"
                     src="\imgs\Icon_User_01.png"
                     alt="Logo_02"
                     width="70px"
@@ -92,13 +83,11 @@ export default function AppLogIn() {
                     disabled={false}
                     variant="h4"
                     color="primary"
-                // className=''
                 >¡BIENVENIDO!
                 </Typography>
                 <Typography
                     variant="h6"
                     color="secondary"
-                    // className=''
                     sx={{
                         pb: "20px"
                     }}
@@ -112,7 +101,6 @@ export default function AppLogIn() {
                             sx={{ my: 0.5 }} />
                         <TextField
                             id="email"
-                            // label="Correo Electrónico"
                             label="CORREO ELECTRÓNICO"
                             type="email"
                             variant="outlined"
@@ -133,12 +121,10 @@ export default function AppLogIn() {
                             sx={{ my: 0.5 }} />
                         <TextField
                             id="password"
-                            // label="Contraseña"
                             label="CONTRASEÑA"
                             type={showPassword ? 'text' : 'password'}
                             variant="outlined"
                             required
-                            // helperText="La contraseña no es correcta."
                             helperText={passwordError
                                 ? ("La contraseña no es correcta.")
                                 : null}
@@ -178,26 +164,19 @@ export default function AppLogIn() {
                 sx={{
                     '& .MuiTextField-root': { m: 1, width: '40ch' },
                     display: "flex",
-                    // display: { md: 'flex' },
                     my: "40px",
                     px: "40px",
                     mb: "100px"
-                    // pb: "20px",
-                    // mx: "10px",
-                    // m: "auto",
                 }}
                 flexDirection={"column"}
                 justifyContent={"center"}
                 alignItems={"center"}
                 textAlign={"center"}
-            // noValidate
-            // autoComplete="off"
             >
                 <hr className="hr-style2" />
                 <Typography
                     variant="h6"
                     color="secondary"
-                // className=''
                 >¿AÚN NO TIENES UNA CUENTA?
                 </Typography>
                 <Typography

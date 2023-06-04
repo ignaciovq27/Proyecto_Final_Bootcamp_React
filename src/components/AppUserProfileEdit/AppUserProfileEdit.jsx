@@ -2,7 +2,7 @@
 import "./AppUserProfileEdit.css"
 
 //components
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { useEffect } from 'react';
 import { useContext } from "react";
@@ -10,7 +10,6 @@ import { ContextUser } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 
 import { Box, IconButton, InputAdornment, Typography } from "@mui/material";
-import { Container } from '@mui/material';
 import { Grid } from '@mui/material';
 import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
@@ -25,8 +24,6 @@ import CheckIcon from '@mui/icons-material/Check';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import CardActions from '@mui/material/CardActions';
 import AppButtonUpload from "../AppButtonUpload/AppButtonUpload";
 
 export default function AppUserProfileEdit() {
@@ -67,8 +64,6 @@ export default function AppUserProfileEdit() {
         console.log("mail ingresado: " + email)
         console.log("password ingresado: " + password)
         console.log("profileImg ingresado: " + profileImg)
-
-        // setProfileImg(user.profileImg)
 
         if (name.length > 12) {
             return alert("error: Indica un nombre válido.")
@@ -131,7 +126,6 @@ export default function AppUserProfileEdit() {
                     pb: "15px",
                     fontSize: { xs: "28px", sm: "30px", md: "34px" }
                 }}
-            // className=''
             >✧ EDITAR PERFIL ✧
             </Typography>
             <Card
@@ -157,7 +151,6 @@ export default function AppUserProfileEdit() {
                     <Typography
                         variant="h6"
                         color="secondary"
-                        // className=''
                         sx={{
                             pt: "30px",
                             pb: "10px",
@@ -177,10 +170,8 @@ export default function AppUserProfileEdit() {
                         <Grid
                             item
                             xs={12}
-                            // sm={6}
                             md={9}
                             sx={{
-                                // pl: { xs: 'none', sm: '0px', md: "0px", lg: "30px" },
                                 display: "flex",
                             }}
                             flexDirection={"column"}
@@ -195,7 +186,6 @@ export default function AppUserProfileEdit() {
                                 sx={{
                                     '& .MuiTextField-root': { m: 1, width: { sx: "10ch", sm: "30ch", md: "40ch" } },
                                     display: "flex",
-                                    // display: { md: 'flex' },
                                     my: "20px",
                                 }}
                                 flexDirection={"column"}
@@ -211,15 +201,10 @@ export default function AppUserProfileEdit() {
 
                                         <TextField
                                             id="name"
-                                            // label="Nombre de usuario"
                                             label="NOMBRE DE USUARIO"
                                             type="text"
                                             variant="outlined"
                                             required
-                                            // disabled
-                                            // helperText="Ingresa un nombre de usuario valido."
-                                            // error={false}
-                                            // value={user.name}
                                             defaultValue={user.name}
                                             color="primary"
                                             autoFocus
@@ -239,14 +224,11 @@ export default function AppUserProfileEdit() {
                                             sx={{ my: 0.5 }} />
                                         <TextField
                                             id="email"
-                                            // label="Correo Electrónico"
                                             label="CORREO ELECTRÓNICO"
                                             type="email"
                                             variant="outlined"
                                             required
-                                            // helperText="Ingrese un correo valido."
                                             error={false}
-                                            // value={user.email}
                                             defaultValue={user.email}
                                             onChange={(e) => setEmail(e.target.value)}
                                             color="primary"
@@ -259,7 +241,6 @@ export default function AppUserProfileEdit() {
                                             sx={{ my: 0.5 }} />
                                         <TextField
                                             id="password"
-                                            // label="Contraseña"
                                             label="CONTRASEÑA"
                                             type={showPassword ? 'text' : 'password'}
                                             variant="outlined"
@@ -268,7 +249,6 @@ export default function AppUserProfileEdit() {
                                                 ? ("La contraseña no es correcta.")
                                                 : null}
                                             error={passwordError}
-                                            // value={""}
                                             defaultValue={user.password}
                                             onChange={(e) => setPassword(e.target.value)}
                                             color="primary"
@@ -289,14 +269,11 @@ export default function AppUserProfileEdit() {
                                             sx={{ my: 0.5 }} />
                                         <TextField
                                             id="passwordRepeat"
-                                            // label="Contraseña"
                                             label="REPETIR CONTRASEÑA"
                                             type={showPasswordRepeat ? 'text' : 'password'}
                                             variant="outlined"
                                             required
-                                            // helperText="La contraseña no es correcta."
                                             error={false}
-                                            // value={""}
                                             onChange={(e) => setPasswordRepeat(e.target.value)}
                                             color="primary"
                                         />
@@ -309,22 +286,6 @@ export default function AppUserProfileEdit() {
                                             {showPasswordRepeat ? <VisibilityOff /> : <Visibility />}
                                         </IconButton>
                                     </div>
-                                    {/* <Button
-                                        // component={Link}
-                                        // to="/user-profile"
-                                        type="submit"
-                                        variant="contained"
-                                        size="small"
-                                        color="warning"
-                                        sx={{
-                                            mt: 1,
-                                            mb: 1,
-                                            py: 1.5,
-                                            mx: 3,
-                                            width: "160px",
-                                        }}
-                                        endIcon={<CheckIcon />}>CONFIRMAR
-                                    </Button> */}
                                 </div>
                             </Box>
                         </Grid>
@@ -332,10 +293,8 @@ export default function AppUserProfileEdit() {
                         <Grid
                             item
                             xs={12}
-                            // sm={6}
                             md={3}
                             sx={{
-                                // pl: { xs: 'none', sm: '0px', md: "0px", lg: "30px" },
                                 display: "flex",
                             }}
                             flexDirection={"column"}
@@ -346,7 +305,6 @@ export default function AppUserProfileEdit() {
                             <Box
                                 sx={{
                                     display: "flex",
-                                    // display: { md: 'flex' },
                                     mb: { xs: "40px", sm: "40px", md: "0px", lg: 0 },
 
                                 }}
@@ -356,9 +314,7 @@ export default function AppUserProfileEdit() {
                                 textAlign={"center"}
                             >
                                 <Typography
-                                    // variant="h4"
                                     color="secondary"
-                                    // className=''
                                     sx={{
                                     }}
                                 >IMAGEN DE PERFÍL:
@@ -378,8 +334,6 @@ export default function AppUserProfileEdit() {
 
                     <Box
                         sx={{
-                            // display: "flex",
-                            // display: { md: 'flex' },
                             mb: { xs: 2, sm: 2, md: 2, lg: 2 },
                         }}>
 
@@ -401,14 +355,11 @@ export default function AppUserProfileEdit() {
                         </Button>
 
                         <Button
-                            // component={Link}
-                            // to="/user-profile"
                             type="submit"
                             form="userProfileEditForm"
                             variant="contained"
                             size="small"
                             color="warning"
-                            // onClick={handleSubmit}
                             sx={{
                                 mt: 1,
                                 mb: 1,

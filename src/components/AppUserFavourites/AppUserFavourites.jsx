@@ -16,35 +16,25 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 export default function AppUserFavourites() {
-    const { products } = useContext(ContextProduct);
     const { favourites, addFavourites, deleteFavourites } = useContext(ContextFavourite);
     const [searchText, setSearchText] = useState("")
     const [sortOrder, setSortOrder] = useState(0)
 
     const [searchOrder, setsearchOrder] = useState(0);
-    // console.log(sortOrder)
-
 
     const handleOnChange = (event) => {
         setsearchOrder(event.target.value);
         if (event.target.value === 0) {
             setSortOrder(0);
-            console.log("sort 0");
         }
         if (event.target.value === 1) {
             setSortOrder(1);
-            console.log("sort 1");
-            // console.log(sortOrder);
         }
         if (event.target.value === 2) {
             setSortOrder(2);
-            console.log("sort 2");
-            // console.log(sortOrder);
         }
         if (event.target.value === 3) {
             setSortOrder(3);
-            console.log("sort 3");
-            // console.log(sortOrder);
         }
     }
 
@@ -64,7 +54,6 @@ export default function AppUserFavourites() {
         if (sortOrder === 3) {
             return sortByPrice(b, a);
         }
-        // return 0;
     }
 
     function sortByTitle(a, b) {
@@ -77,7 +66,6 @@ export default function AppUserFavourites() {
         if (titleA > titleB) {
             return 1;
         }
-        // return 0;
     }
 
     function sortByPrice(a, b) {
@@ -87,7 +75,6 @@ export default function AppUserFavourites() {
         if (a.price > b.price) {
             return 1
         }
-        // return 0;
     }
 
     return (
@@ -102,7 +89,6 @@ export default function AppUserFavourites() {
                     pb: "20px",
                     fontSize: { xs: "28px", sm: "30px", md: "34px" }
                 }}
-            // className=''
             >✧ MIS FAVORITOS ✧
             </Typography>
 
@@ -130,8 +116,6 @@ export default function AppUserFavourites() {
                     <Grid
                         item
                         xs={12}
-                        // sm={6}
-                        // md={12}
                         sx={{
                             display: "flex", flexDirection: { xs: 'column', sm: 'row' },
                             gap: 4,
@@ -178,11 +162,9 @@ export default function AppUserFavourites() {
                             })}
                         {
                             favourites.length === 0 &&
-                            //  <p>NONES</p>
                             <>
                                 <Box
                                     sx={{
-                                        // my: 1,
                                         display: "flex",
                                         flexDirection: "column",
                                         justifyContent: "center",

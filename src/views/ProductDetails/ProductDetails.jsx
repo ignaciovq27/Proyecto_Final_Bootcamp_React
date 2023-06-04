@@ -19,33 +19,6 @@ export default function ProductDetails() {
   const navigate = useNavigate();
   const { favourites, addFavourites, deleteFavourites } = useContext(ContextFavourite);
 
-
-
-  // const params = useParams()
-  // const navigate = useNavigate();
-
-  // const getProductById = (id) => products.find((product) => product.id === parseInt(id))
-  // // const product = getProductById(params.id) //NO
-
-  // const product = products.find((product) => product.id === parseInt(params.id));
-  // console.log(product)
-
-  // if (!product) {
-  //   navigate('/gallery-boardgames')
-  //   return null
-  // }
-
-
-  // useEffect(() => {
-
-  //   if (!product) {
-  //     navigate('/gallery-boardgames')
-  //     return null
-  //   }
-  // }, [params])
-
-
-  // ------------------------------------
   const params = useParams()
   const [product, setProduct] = useState(null);
   const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -64,8 +37,6 @@ export default function ProductDetails() {
       navigate("/gallery-boardgames");
     }
   }, [isPageLoaded, product, navigate]);
-
-  // console.log(product);
 
   return (
     <div className="productDetails-container">

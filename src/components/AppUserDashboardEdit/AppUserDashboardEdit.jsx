@@ -2,7 +2,7 @@
 import "./AppUserDashboardEdit.css"
 
 //components
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
@@ -11,8 +11,7 @@ import { ContextProduct } from "../../context/ProductContext";
 import { useNavigate } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 
-import { Box, FormControl, IconButton, Typography, MenuItem } from "@mui/material";
-import { Container } from '@mui/material';
+import { Box, Typography, MenuItem } from "@mui/material";
 import { Grid } from '@mui/material';
 import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
@@ -28,8 +27,6 @@ import InputAdornment from '@mui/material/InputAdornment';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import CardActions from '@mui/material/CardActions';
 import AppButtonUpload from "../AppButtonUpload/AppButtonUpload";
 
 export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle, confirmButtonText }) {
@@ -54,14 +51,10 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
         if (id !== undefined) {
             const findProduct = products.find((item) => item.id === parseInt(id))
 
-            // foundedProductUser = findProduct.item.user
             if (findProduct && findProduct.userId !== user.userId) {
-                console.log("Error: Usuario no válido");
                 return navigate("/")
             }
             else {
-                console.log("Producto editado:")
-                console.log(findProduct)
                 setTitle(findProduct.title)
                 setCategory(findProduct.category)
                 setPrice(findProduct.price)
@@ -77,15 +70,7 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
     }, [id])
 
     const handleSubmit = async (e) => {
-        console.log(isEditing)
         e.preventDefault()
-        // console.log("Submit")
-        console.log("producto ingresado: " + title)
-        console.log("categoría ingresada: " + category)
-        console.log("precio ingresado: " + price)
-        console.log("cantidad ingresada: " + quantity)
-        console.log("descripción ingresada: " + description)
-        console.log("imagen ingresada: " + img)
 
         if (title.length > 60) {
             return alert("error: Indica un nombre de producto válido.")
@@ -94,16 +79,6 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
         if (description.length > 450) {
             return alert("error: Indica una descripción de producto válida.")
         }
-
-        // if (
-        //     title === ""
-        //     || category === ""
-        //     || price === ""
-        //     || quantity === ""
-        //     || description === ""
-        //     || img === "") {
-        //     return alert("error: Debe completar todos los registros.")
-        // }
 
         const newProduct = {
             userId: parseInt(user.userId),
@@ -117,7 +92,6 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
             quantity,
         }
         createProduct(newProduct)
-        console.log("new product created")
 
         if (newProduct) {
             if (isEditing) {
@@ -133,20 +107,11 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                     quantity,
                 }
                 editProduct(updatedProduct)
-                console.log("Products updated")
             }
             setIsEditing(false)
-            console.log(isEditing)
             return navigate("/user-dashboard")
         }
     }
-
-    // const [searchOrder, setsearchOrder] = (0);
-    // const [searchOrder, setsearchOrder] = useState(0);
-
-    // const handleChange = (event) => {
-    //     setsearchOrder(event.target.value);
-    // };
 
     return (
         <>
@@ -160,9 +125,7 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                     pb: "15px",
                     fontSize: { xs: "26px", sm: "30px", md: "34px" }
                 }}
-            // className=''
             >
-                {/* ✧ CREAR PUBLICACIÓN ✧ */}
                 {dashboardTitle}
 
             </Typography>
@@ -189,7 +152,6 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                     <Typography
                         variant="h6"
                         color="secondary"
-                        // className=''
                         sx={{
                             pt: "30px",
                             pb: "10px",
@@ -210,10 +172,8 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                         <Grid
                             item
                             xs={12}
-                            // sm={6}
                             md={8}
                             sx={{
-                                // pl: { xs: 'none', sm: '0px', md: "0px", lg: "30px" },
                                 display: "flex",
                             }}
                             flexDirection={"column"}
@@ -228,7 +188,6 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                 sx={{
                                     '& .MuiTextField-root': { m: 1, width: { sx: "10ch", sm: "30ch", md: "40ch" } },
                                     display: "flex",
-                                    // display: { md: 'flex' },
                                     my: "20px",
                                 }}
                                 flexDirection={"column"}
@@ -247,10 +206,8 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                             type="text"
                                             variant="outlined"
                                             required
-                                            // disabled
                                             value={title}
                                             autoFocus
-                                            // defaultValue={productTitle}
                                             onChange={(e) => {
                                                 const value = e.target.value;
                                                 setTitle(value);
@@ -272,18 +229,17 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                             id="category"
                                             label="CATEGORÍA"
                                             placeholder="ELIGE UNA CATEGORÍA"
-                                            required
+                                            // required
                                             error={false}
                                             select
                                             value={0}
-                                            // onChange={handleChange}
+                                            disabled
                                             onChange={(e) => setCategory(e.target.value)}
                                         >
                                             <MenuItem value={0}>JUEGOS DE MESA</MenuItem>
                                             <MenuItem value={1} disabled>ACCESORIOS</MenuItem>
 
                                         </TextField>
-                                        {/* <FormHelperText>Without label</FormHelperText> */}
                                     </div>
 
 
@@ -298,11 +254,8 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                             type="number"
                                             variant="outlined"
                                             required
-                                            // disabled
-                                            // helperText="Ingresa un nombre de usuario valido."
                                             error={false}
                                             value={price}
-                                            // onChange={(e) => setPrice(e.target.value)}
                                             onChange={(e) => setPrice(Number(e.target.value))}
                                             color="primary"
                                             placeholder="9.990"
@@ -323,16 +276,12 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                             type="number"
                                             variant="outlined"
                                             required
-                                            // disabled
-                                            // helperText={nameError ? "Ingresa una cantidad válida." : ""}
                                             error={false}
                                             value={quantity}
-                                            // defaultValue={userName}
                                             onChange={(e) => setQuantity(Number(e.target.value))}
                                             color="primary"
                                             placeholder="1"
                                             InputProps={{
-                                                // inputProps: { min: 1 },
                                             }}
                                         />
                                     </div>
@@ -348,11 +297,9 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                             type="text"
                                             variant="outlined"
                                             required
-                                            // disabled
                                             error={descriptionError}
                                             helperText={descriptionError ? "La descripción debe tener 450 caracteres MAX." : ""}
                                             value={description}
-                                            // defaultValue={userName}
                                             onChange={(e) => {
                                                 const value = e.target.value;
                                                 setDescription(value);
@@ -361,10 +308,6 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                             color="primary"
                                             multiline
                                             rows={4}
-                                        // placeholder=""
-                                        // minRows={4}
-                                        // maxRows={4}
-                                        // defaultValue="Default Value"
                                         />
                                     </div>
                                 </div>
@@ -374,10 +317,8 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                         <Grid
                             item
                             xs={12}
-                            // sm={6}
                             md={4}
                             sx={{
-                                // pl: { xs: 'none', sm: '0px', md: "0px", lg: "30px" },
                                 display: "flex",
                             }}
                             flexDirection={"column"}
@@ -388,7 +329,6 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                             <Box
                                 sx={{
                                     display: "flex",
-                                    // display: { md: 'flex' },
                                     mb: { xs: "40px", sm: "40px", md: "0px", lg: 0 },
 
                                 }}
@@ -398,16 +338,14 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                 textAlign={"center"}
                             >
                                 <Typography
-                                    // variant="h4"
                                     color="secondary"
-                                    // className=''
                                     sx={{
                                         minWidth: "250px"
                                     }}
                                 >IMAGEN DEL PRODUCTO:
                                 </Typography>
                                 <AppImg
-                                    src="\imgs\User_Profile_Img_00.png"
+                                    src="\imgs\products\Product_00.png"
                                     alt="User_Profile_Img_00.png"
                                     width="140px"
                                     imgClass="userProductImg-style"
@@ -421,8 +359,6 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
 
                     <Box
                         sx={{
-                            // display: "flex",
-                            // display: { md: 'flex' },
                             mb: { xs: 2, sm: 2, md: 2, lg: 2 },
                         }}>
 
@@ -443,14 +379,11 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                             startIcon={<ArrowBackIcon />}>CANCELAR
                         </Button>
                         <Button
-                            // component={Link}
-                            // to="/user-dashboard"
                             type="submit"
                             form="userDashboardEditForm"
                             variant="contained"
                             size="small"
                             color="warning"
-                            // onClick={handleSubmit}
                             sx={{
                                 mt: 1,
                                 mb: 1,

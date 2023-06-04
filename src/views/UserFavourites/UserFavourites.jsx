@@ -16,7 +16,6 @@ export default function UserFavourites() {
             <AppTitle title="USER FAVOURITES" />
             <AppUserFavourites />
             <Typography
-                // noWrap
                 component={Link}
                 to="/gallery-boardgames"
                 sx={{
@@ -27,7 +26,6 @@ export default function UserFavourites() {
             >
                 <Button variant="contained"
                     sx={{
-                        // py: 2,
                         my: 2,
                         mb: 6,
                     }}
@@ -35,7 +33,6 @@ export default function UserFavourites() {
                 </Button>
             </Typography>
             <Typography
-                // noWrap
                 component={Link}
                 to="/"
                 sx={{
@@ -46,7 +43,6 @@ export default function UserFavourites() {
             >
                 <Button variant="contained"
                     sx={{
-                        // py: 2.282,
                         my: 2,
                         mb: 6,
                     }}

@@ -23,45 +23,19 @@ export default function AppGalleryBoardgames() {
 
     const [sortOrder, setSortOrder] = useState(0)
     const [searchOrder, setsearchOrder] = useState(0);
-    // console.log(sortOrder)
-
-
-    // function handleToggleIsFavourite(product) {
-    //     setIsFavourite(prevIsFavourite => !prevIsFavourite);
-    //     const likeStatus = product.fav
-    //     if (likeStatus) {
-    //         product.fav = true
-    //         addFavourites(product)
-    //         console.log("AGREGADO A FAV")
-    //         //   setPhotos([...photos])
-    //     }
-    //     else {
-    //         product.fav = false
-    //         console.log("ELIMINADO DE FAV")
-    //         //   setPhotos([...photos])
-    //     }
-    // }
-
     const handleOnChange = (event) => {
         setsearchOrder(event.target.value);
         if (event.target.value === 0) {
             setSortOrder(0);
-            console.log("sort 0");
         }
         if (event.target.value === 1) {
             setSortOrder(1);
-            console.log("sort 1");
-            // console.log(sortOrder);
         }
         if (event.target.value === 2) {
             setSortOrder(2);
-            console.log("sort 2");
-            // console.log(sortOrder);
         }
         if (event.target.value === 3) {
             setSortOrder(3);
-            console.log("sort 3");
-            // console.log(sortOrder);
         }
     }
 
@@ -81,7 +55,6 @@ export default function AppGalleryBoardgames() {
         if (sortOrder === 3) {
             return sortByPrice(b, a);
         }
-        // return 0;
     }
 
     function sortByTitle(a, b) {
@@ -94,7 +67,6 @@ export default function AppGalleryBoardgames() {
         if (titleA > titleB) {
             return 1;
         }
-        // return 0;
     }
 
     function sortByPrice(a, b) {
@@ -104,7 +76,6 @@ export default function AppGalleryBoardgames() {
         if (a.price > b.price) {
             return 1
         }
-        // return 0;
     }
 
     return (
@@ -119,7 +90,6 @@ export default function AppGalleryBoardgames() {
                     pb: "20px",
                     fontSize: { xs: "28px", sm: "30px", md: "34px" }
                 }}
-            // className=''
             >✧ JUEGOS DE MESA ✧
             </Typography>
 
@@ -147,8 +117,6 @@ export default function AppGalleryBoardgames() {
                     <Grid
                         item
                         xs={12}
-                        // sm={6}
-                        // md={12}
                         sx={{
                             display: "flex", flexDirection: { xs: 'column', sm: 'row' },
                             gap: 4,
@@ -178,13 +146,9 @@ export default function AppGalleryBoardgames() {
                                             if (product.fav) {
                                                 product.fav = false;
                                                 deleteFavourites(product.id)
-                                                console.log("Eliminado de Favoritos");
-                                                console.log(favourites)
                                             } else {
                                                 product.fav = true;
                                                 addFavourites(product);
-                                                console.log("Agregado a favoritos");
-                                                console.log(favourites)
                                             }
                                         }}
 

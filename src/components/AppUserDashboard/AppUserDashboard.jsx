@@ -2,13 +2,12 @@
 import "./AppUserDashboard.css"
 
 //components
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { ContextUser } from '../../context/UserContext';
 import { ContextProduct } from "../../context/ProductContext";
-// import { useNavigate } from 'react-router-dom';
 
 import { Box, Typography } from "@mui/material";
 import { Button } from "@mui/material";
@@ -24,7 +23,6 @@ export default function AppUserDashboard() {
 
     const [userProductsCount, setuserProductsCount] = useState(0);
 
-    // Actualiza la cantidad de publicaciones cuando cambie el array de productos
     useEffect(() => {
 
         function sortById(a, b) {
@@ -37,13 +35,7 @@ export default function AppUserDashboard() {
             }
         }
         const userProducts = products.sort(sortById).filter(product => product.userId === user.userId);
-        // const userProducts = products.filter(product => product.user === user.name || parseInt(product.userId) === parseInt(user.id));
-        // const userProducts = products.filter(product => product.user === user.name);
-        console.log(user.userId)
-        console.log(products[0].userId)
-
         setuserProductsCount(userProducts.length);
-        console.log(products)
     }, [products, user.userId]);
 
     return (
@@ -58,7 +50,6 @@ export default function AppUserDashboard() {
                     pb: "15px",
                     fontSize: { xs: "28px", sm: "30px", md: "34px" }
                 }}
-            // className=''
             >✧ MIS PUBLICACIONES ✧
             </Typography>
             <Card
@@ -75,13 +66,11 @@ export default function AppUserDashboard() {
                     maxWidth: { xs: "330px", sm: "700px", md: "880px", lg: "1040px" },
                     borderRadius: "20px",
                 }}
-            // className="userCard-style"
             >
                 <CardContent
                     sx={{
                         m: "0", p: "0",
                     }}
-                // className="userCard-style"
                 >
                     <Box
                         sx={{
@@ -103,8 +92,6 @@ export default function AppUserDashboard() {
                                 mb: 1,
                                 py: 2,
                                 mx: 3,
-                                // width: "200px",
-                                // whiteSpace: "nowrap",
                             }}
                             endIcon={<AutoAwesomeIcon />}> CREAR PUBLICACIÓN
                         </Button>
@@ -158,9 +145,7 @@ export default function AppUserDashboard() {
                                     }}
                                 >
                                     <Typography
-                                        // variant="h6"
                                         color="secondary"
-                                        // className=''
                                         sx={{
                                             px: 1
                                         }}
@@ -179,7 +164,6 @@ export default function AppUserDashboard() {
                                             key={product.id}
                                             dashboardProductTitle={product.title}
                                             dashboardProductImg={product.img}
-                                            // dashboardOnClickEdit={() => editProduct(product.id)}
                                             to={`/user-dashboard-edit/${product.id}`}
                                             dashboardOnClickDelete={() => deleteProduct(product.id)}
                                         />

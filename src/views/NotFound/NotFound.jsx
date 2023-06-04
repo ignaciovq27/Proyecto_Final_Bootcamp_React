@@ -15,7 +15,6 @@ export default function NotFound() {
             <h3>✧ ERROR 404 ✧</h3>
             <h4>La ruta que intentas consultar no existe.</h4>
             <Typography
-                // noWrap
                 component={Link}
                 to="/"
                 sx={{

@@ -6,7 +6,6 @@ import { Container } from '@mui/material';
 import { Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import AppImg from '../AppImg/AppImg';
-// import { Link, NavLink } from 'react-router-dom';
 
 export default function AppSection() {
     return (
@@ -41,7 +40,6 @@ export default function AppSection() {
                         sx={{
                             textAlign: "left",
                         }}
-                    // className=''
                     >BIENVENIDO AL MEJOR MARKETPLACE DE JUEGOS DE MESA
                     </Typography>
                     <Typography
@@ -54,7 +52,6 @@ export default function AppSection() {
                             mt: "20px",
                             mb: "20px", fontWeight: "bold",
                         }}
-                    // className=''
                     >"Lorem ipsum, dolor sit amet consectetur adipisicing elit. "
                     </Typography>
                     <Typography
@@ -67,7 +64,6 @@ export default function AppSection() {
                             mt: "20px",
                             mb: "20px",
                         }}
-                    // className=''
                     >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil beatae ipsum assumenda reprehenderit dolorem porro minus doloremque recusandae nesciunt odio cupiditate eum ullam itaque quos similique accusantium sint, nisi maxime!
                     </Typography>
                 </Grid >
@@ -88,7 +84,6 @@ export default function AppSection() {
                         }}
                         textAlign={"center"}
                     ><AppImg
-                            // to="/"
                             src="\imgs\Section_Img_01.png"
                             alt="Section_Img_01"
                             imgClass="imgBorderRadius imgShadow imgSize"

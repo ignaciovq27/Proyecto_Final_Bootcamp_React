@@ -2,14 +2,11 @@
 import "./AppProductCart.css"
 
 //components
-import { Link, NavLink } from 'react-router-dom';
 import { useState } from "react";
-import { Box, Chip, IconButton, InputAdornment, Typography, autocompleteClasses } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Button } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -27,9 +24,6 @@ export default function AppCardDashboard({
     handleCartDecrement,
 }) {
 
-    const pollo = "( °)> "
-    const [count, setCount] = useState(0)
-
     return (
         <>
             <Card
@@ -42,10 +36,6 @@ export default function AppCardDashboard({
                     m: "auto",
                     mt: "10px",
                     mb: "10px",
-                    // pt: "5px",
-                    // mx: 20,
-                    // mb: "40px",
-                    // Width: { xs: "330px", sm: "600px", md: "700px", lg: "1200px" },
                     borderRadius: "10px",
                 }}
 
@@ -54,8 +44,6 @@ export default function AppCardDashboard({
                     sx={{
                         display: "flex",
                         flexDirection: { xs: "column", sm: "row" },
-                        // px: 40,
-                        // width: "1000px",
                         maxWidth: { xs: "280px", sm: "700px", md: "880px", lg: "1100px" },
                     }}
                     className="productCart2-style"
@@ -69,7 +57,6 @@ export default function AppCardDashboard({
                         justifyContent={"center"}
                         alignItems={"center"}
                         textAlign={"center"}
-                    // className="boxContainer-style"
                     >
                         <Box
                             sx={{
@@ -103,13 +90,11 @@ export default function AppCardDashboard({
                                 }}
                             >
                                 <Typography
-                                    // variant="h6"
                                     color="primary"
                                     sx={{
                                         textAlign: { xs: "center", sm: "left", md: "left", lg: "left" },
                                         fontSize: "14px",
                                     }}
-                                // className=''
                                 >{productCartUser}
                                 </Typography>
                                 <Typography
@@ -118,10 +103,7 @@ export default function AppCardDashboard({
                                     sx={{
                                         fontWeight: "bold",
                                         fontSize: "18px",
-                                        // mr: 10,
-                                        // ml: 2,
                                         py: 0.5,
-                                        // px: 1,
                                         textAlign: { xs: "center", sm: "left", md: "left", lg: "left" },
                                         width: { xs: "240px", sm: "200px", md: "240px", lg: "300px" },
                                         mx: "auto"
@@ -134,12 +116,10 @@ export default function AppCardDashboard({
                                     variant="h5"
                                     color="primary"
                                     sx={{
-                                        // fontWeight: "bold",
                                         fontWeight: "600",
                                         textAlign: { xs: "center", sm: "center", md: "center", lg: "left" },
                                         fontSize: "22px"
                                     }}
-                                // className=''
                                 >{productCartPrice}
                                 </Typography>
                             </Box>
@@ -150,7 +130,6 @@ export default function AppCardDashboard({
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            // pt: "10px"
                             px: { xs: 6, sm: 4, md: 6, lg: 6 },
 
                         }}
@@ -163,12 +142,10 @@ export default function AppCardDashboard({
                                 display: "flex",
                                 pt: 3.1,
                                 pb: { xs: 0.5, sm: 0, md: 0, lg: 0 },
-                                // py: { xs: 2, sm: 50, md: 0, lg: 0 },
                             }}
                             alignItems={"center"}
                         >
                             <Button variant="contained"
-                                // onClick={() => setCount((count) => count - 1)}
                                 onClick={handleCartDecrement}
                                 sx={{
                                     minWidth: "40px",
@@ -180,19 +157,16 @@ export default function AppCardDashboard({
                                 variant="h5"
                                 color="secondary"
                                 sx={{
-                                    // mt: "20px",
                                     mx: "10px",
                                     fontWeight: "bold",
                                     minWidth: "50px",
                                     textAlign: "center",
                                 }}
-                            // className=''
                             >{productCartCount}
                             </Typography>
 
                             <Button
                                 variant="contained"
-                                // onClick={() => setCount((count) => count + 1)}
                                 onClick={handleCartIncrement}
 
                                 sx={{
@@ -203,11 +177,8 @@ export default function AppCardDashboard({
                             </Button>
                         </Box>
                         <Typography
-                            // variant="h4"
                             color="secondary"
-                            // className=''
                             sx={{
-                                // textAlign: { xs: "center", sm: "center", md: "center" }
                                 pt: 1,
                             }}
                         >DISPONIBLES: {productCartQuantity}
@@ -218,7 +189,6 @@ export default function AppCardDashboard({
                         sx={{
                             display: "flex",
                             flexDirection: "column",
-                            // pt: "10px"
                         }}
                         justifyContent={"center"}
                         alignItems={"center"}
@@ -228,13 +198,10 @@ export default function AppCardDashboard({
                             variant="h5"
                             color="primary"
                             sx={{
-                                // fontWeight: "bold",
                                 fontWeight: "600",
                                 textAlign: { xs: "center", sm: "center", md: "center", lg: "center" },
                                 fontSize: "24px",
-                                // pb: 1,
                             }}
-                        // className=''
                         >{productCartTotal}
                         </Typography>
                     </Box>

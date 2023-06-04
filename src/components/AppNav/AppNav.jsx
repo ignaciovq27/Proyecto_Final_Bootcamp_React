@@ -9,18 +9,15 @@ import { ContextProduct } from "../../context/ProductContext";
 import { ContextFavourite } from '../../context/FavouriteContext';
 
 import { Link, NavLink } from 'react-router-dom';
-import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -28,73 +25,13 @@ import AppButton from '../AppButton/AppButton';
 import AppIconButton from '../AppIconButton/AppIconButton';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AppImg from '../AppImg/AppImg';
-// import MoreIcon from '@mui/icons-material/MoreVert';
-
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.black, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.black, 0.3),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 1),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '14ch',
-      },
-    },
-    [theme.breakpoints.up('md')]: {
-      width: '8ch',
-      '&:focus': {
-        width: '10ch',
-      },
-    },
-    [theme.breakpoints.up('lg')]: {
-      width: '16ch',
-      '&:focus': {
-        width: '18ch',
-      },
-    },
-  },
-}));
 
 // export component
 export default function AppNav() {
   const { user, logOut } = useContext(ContextUser);
-  const { cartItems,
-    setCartItems,
-    cartAmount,
-    setCartAmount,
-    productsCount,
-    setProductsCount, } = useContext(ContextProduct);
+  const { productsCount } = useContext(ContextProduct);
 
-  const { favourites, addFavourites } = useContext(ContextFavourite);
+  const { favourites } = useContext(ContextFavourite);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -149,7 +86,6 @@ export default function AppNav() {
         >
           <MenuItem
             sx={{ display: 'block', py: 2, textDecoration: "none", }}
-            // onClick={{handleMenuClose, handleMobileMenuClose}}
             onClick={() => {
               handleMenuClose();
               handleMobileMenuClose();
@@ -174,7 +110,6 @@ export default function AppNav() {
         >
           <MenuItem
             sx={{ py: 2, textDecoration: "none", }}
-          // onClick={handleMenuClose}
           > CERRAR SESIÓN </MenuItem>
         </Typography>
       ) : null}
@@ -215,7 +150,6 @@ export default function AppNav() {
         >
           <MenuItem
             sx={{ py: 2, textDecoration: "none", }}
-          // onClick={handleMenuClose}
           > INICIAR SESIÓN </MenuItem>
         </Typography>
       ) : null}
@@ -287,7 +221,6 @@ export default function AppNav() {
             aria-label="show 1 new notifications"
             aria-controls={menuId}
             aria-haspopup="true"
-            // onClick={handleProfileMenuOpen}
             color="secondary"
           ><Badge
             badgeContent={productsCount}
@@ -354,7 +287,6 @@ export default function AppNav() {
   //componentes de Navbar
   return (
     <Box
-      // sx={{ flexGrow: 1 }}
       className="AppBar-style">
       <hr className="hrTop-style" />
       <AppBar position="static" className="AppBar-style">
@@ -367,29 +299,12 @@ export default function AppNav() {
             <AppButton text="JUEGOS DE MESA"
               to="/gallery-boardgames"
               className={({ isActive }) => (isActive ? 'active' : 'inactive')} />
-            {/* <AppButton text="ACCESORIOS"
-              to="/gallery-accessories"
-              className={({ isActive }) => (isActive ? 'active' : 'inactive')} /> */}
           </Box>
-          <Search
-            sx={{ display: { xs: 'none', sm: 'flex' } }}
-          >
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-
-            <StyledInputBase
-              sx={{
-              }}
-              placeholder="Buscar…"
-            />
-          </Search>
+          {/*  */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {user ? (
               <>
-                {/* <AppButton text="PRODUCT DETAILS" to="/product-details" /> */}
-
                 <AppButton text="DASHBOARD" to="/user-dashboard" />
 
                 <AppIconButton icon={<FavoriteIcon />} to="/user-favourites" count={favourites.length} component={NavLink} className={({ isActive }) => (isActive ? 'active' : 'inactive')} />
@@ -397,7 +312,6 @@ export default function AppNav() {
             ) : null}
 
             <AppIconButton icon={<ShoppingCartIcon />} to="/user-cart" count={productsCount}
-              // maxCount={9}
               component={NavLink} />
             <AppIconButton icon={<AccountCircle />} count={0}
               onClick={handleProfileMenuOpen} />
@@ -411,7 +325,6 @@ export default function AppNav() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-      {/* <hr className="hrTop-style"></hr> */}
     </Box>
   );
 } 

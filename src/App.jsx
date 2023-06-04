@@ -4,14 +4,12 @@ import './App.css'
 //components
 import * as React from 'react';
 import { Routes, Route } from "react-router-dom";
-// import { MyContext } from "./MyContext";
 import { useContext } from "react";
 import { ContextUser } from './context/UserContext';
 
 import { Navigate } from 'react-router-dom';
 
 import AppNav from './components/AppNav/AppNav';
-// import AppFooter from './components/AppFooter/AppFooter';
 
 //views
 import Home from './views/Home/Home';
@@ -92,7 +90,6 @@ function App() {
             />
 
             <Route
-              // path="/gallery-boardgames/product-details:id"
               path="/product-details/:id"
               element={<ProductDetails />}
             />
@@ -101,7 +98,6 @@ function App() {
           </Routes>
 
         </main>
-        {/* <AppFooter /> */}
       </div>
     </>
   )

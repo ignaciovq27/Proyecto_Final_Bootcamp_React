@@ -13,7 +13,6 @@ export default function UserDashboardEdit() {
   const params = useParams();
 
   const productFound = products.filter((product) => product.userId === user.userId).length === 0;
-  // console.log(params.id);
 
   return (
     <div className="userDashboardEdit-container" id="userDashboardEdit">
