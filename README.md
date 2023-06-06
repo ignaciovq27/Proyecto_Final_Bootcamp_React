@@ -2,6 +2,7 @@
 # Módulo 06 - PROYECTO FINAL REACT (HITO 3)
 ## Desafío: Desarrollo de sitio tipo Marketplace usando React y MUI.
 ## Build: https://modulo06-proyectofinal-hito03.netlify.app/
+## Video explicativo: https://www.youtube.com/watch?v=8hv2n72GJm4&ab_channel=IgnacioVaras
 ### HITO 3: Desarrollo de lógica para:
 ### ·  Filtrado de publicaciones (lista de productos) por nombre.
 ### ·  Ordenamiento de publicaciones (lista de productos) por selección del usuario (orden alfabético - precio)
