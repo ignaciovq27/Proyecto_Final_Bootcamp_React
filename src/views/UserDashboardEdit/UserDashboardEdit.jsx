@@ -11,7 +11,6 @@ export default function UserDashboardEdit() {
   const { products } = useContext(ContextProduct);
   const { user } = useContext(ContextUser);
   const params = useParams();
-
   const productFound = products.filter((product) => product.userId === user.userId).length === 0;
 
   return (

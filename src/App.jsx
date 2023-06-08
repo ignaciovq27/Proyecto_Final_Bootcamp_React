@@ -22,6 +22,8 @@ import UserDashboardEdit from './views/UserDashboardEdit/UserDashboardEdit';
 import UserFavourites from './views/UserFavourites/UserFavourites';
 import UserCart from './views/UserCart/UserCart';
 import GalleryBoardgames from './views/GalleryBoardgames/GalleryBoardgames';
+import GalleryAccessories from './views/GalleryAccessories/GalleryAccessories';
+import GalleryMiniatures from './views/GalleryMiniatures/GalleryMiniatures';
 import ProductDetails from './views/ProductDetails/ProductDetails';
 import NotFound from './views/NotFound/NotFound';
 
@@ -90,7 +92,28 @@ function App() {
             />
 
             <Route
+              path="/gallery-accessories"
+              element={<GalleryAccessories />}
+            />
+
+            <Route
+              path="/gallery-miniatures"
+              element={<GalleryMiniatures />}
+            />
+
+            <Route
+              // path="/gallery-boardgames/product-details:id"
               path="/product-details/:id"
+              element={<ProductDetails />}
+            />
+
+            <Route
+              path="/accessorie-details/:id"
+              element={<ProductDetails />}
+            />
+
+            <Route
+              path="/miniature-details/:id"
               element={<ProductDetails />}
             />
 

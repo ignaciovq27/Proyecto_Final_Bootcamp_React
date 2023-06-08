@@ -15,8 +15,9 @@ import { CssBaseline } from "@mui/material";
 //fonts
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from "@mui/material/styles";
+import '@fontsource/righteous/400.css';
 
-// cambiar theme de app
+// theme
 const theme = createTheme({
 
   typography: {
@@ -39,7 +40,6 @@ const theme = createTheme({
 });
 
 export default theme;
-import '@fontsource/righteous/400.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>

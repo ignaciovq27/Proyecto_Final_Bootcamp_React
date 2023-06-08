@@ -6,7 +6,10 @@ import { ContextUser } from '../../context/UserContext';
 import { ContextProduct } from "../../context/ProductContext";
 
 import {
-    Box, Typography, Button, Grid, } from "@mui/material";
+    Box, Typography,
+    Button,
+    Grid,
+} from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -14,7 +17,6 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import CardActions from '@mui/material/CardActions';
 
 export default function AppProductDetails({
     productId,

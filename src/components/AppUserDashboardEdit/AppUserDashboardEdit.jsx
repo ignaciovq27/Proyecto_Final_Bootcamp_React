@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 
 import { Box, Typography, MenuItem } from "@mui/material";
+import { Container } from '@mui/material';
 import { Grid } from '@mui/material';
 import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
@@ -52,9 +53,13 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
             const findProduct = products.find((item) => item.id === parseInt(id))
 
             if (findProduct && findProduct.userId !== user.userId) {
+                console.log("Error: Usuario no válido");
                 return navigate("/")
             }
+
             else {
+                console.log("Producto editado:")
+                console.log(findProduct)
                 setTitle(findProduct.title)
                 setCategory(findProduct.category)
                 setPrice(findProduct.price)
@@ -70,7 +75,14 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
     }, [id])
 
     const handleSubmit = async (e) => {
+        console.log(isEditing)
         e.preventDefault()
+        console.log("producto ingresado: " + title)
+        console.log("categoría ingresada: " + category)
+        console.log("precio ingresado: " + price)
+        console.log("cantidad ingresada: " + quantity)
+        console.log("descripción ingresada: " + description)
+        console.log("imagen ingresada: " + img)
 
         if (title.length > 60) {
             return alert("error: Indica un nombre de producto válido.")
@@ -92,6 +104,7 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
             quantity,
         }
         createProduct(newProduct)
+        console.log("new product created")
 
         if (newProduct) {
             if (isEditing) {
@@ -107,8 +120,10 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                     quantity,
                 }
                 editProduct(updatedProduct)
+                console.log("Products updated")
             }
             setIsEditing(false)
+            console.log(isEditing)
             return navigate("/user-dashboard")
         }
     }
@@ -229,15 +244,15 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                             id="category"
                                             label="CATEGORÍA"
                                             placeholder="ELIGE UNA CATEGORÍA"
-                                            // required
+                                            required
                                             error={false}
                                             select
                                             value={0}
-                                            disabled
                                             onChange={(e) => setCategory(e.target.value)}
                                         >
                                             <MenuItem value={0}>JUEGOS DE MESA</MenuItem>
                                             <MenuItem value={1} disabled>ACCESORIOS</MenuItem>
+                                            <MenuItem value={1} disabled>MINIATURAS</MenuItem>
 
                                         </TextField>
                                     </div>
@@ -280,8 +295,9 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                             value={quantity}
                                             onChange={(e) => setQuantity(Number(e.target.value))}
                                             color="primary"
-                                            placeholder="1"
+                                            placeholder="9"
                                             InputProps={{
+                                                inputProps: { min: 1 },
                                             }}
                                         />
                                     </div>
@@ -308,6 +324,7 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                                             color="primary"
                                             multiline
                                             rows={4}
+                                            placeholder="Este juego es sobre..."
                                         />
                                     </div>
                                 </div>
@@ -384,6 +401,9 @@ export default function AppUserDashboardEdit({ dashboardTitle, dashboardSubtitle
                             variant="contained"
                             size="small"
                             color="warning"
+                            disabled={
+                                (title !== "" && price !== "" && quantity !== "" && description !== "") ? false : true
+                            }
                             sx={{
                                 mt: 1,
                                 mb: 1,

@@ -20,7 +20,6 @@ export default function AppCardDashboard({
     to,
     dashboardOnClickDelete,
 }) {
-
     return (
         <>
             <Card

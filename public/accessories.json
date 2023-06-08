@@ -1,0 +1,50 @@
+[
+    {
+        "id": 101,
+        "user": "Siana Store",
+        "title": "Protectores de cartas Dragon Shield 100: Matte Azul",
+        "category": "Accesorios",
+        "price": 11990,
+        "img": "/imgs/accessories/Product_101.png",
+        "description": "Protector tamaño standard, transparente por el frente y azul en el dorso. Contiene 100 unidades. Su color mate es una linea popular de texturas de Dragon Shield, una combinación perfecta de durabilidad y posibilidad de baraja fácil.",
+        "quantity": 20,
+        "cartQuantity": 0,
+        "fav": false
+    },
+    {
+        "id": 102,
+        "user": "Siana Store",
+        "title": "Protectores de cartas Dragon Shield 100: Matte Verde",
+        "category": "Accesorios",
+        "price": 11990,
+        "img": "/imgs/accessories/Product_102.png",
+        "description": "Protector tamaño standard, transparente por el frente y verde en el dorso. Contiene 100 unidades. Su color mate es una linea popular de texturas de Dragon Shield, una combinación perfecta de durabilidad y posibilidad de baraja fácil.",
+        "quantity": 10,
+        "cartQuantity": 0,
+        "fav": false
+    },
+    {
+        "id": 103,
+        "user": "Siana Store",
+        "title": "Protectores de cartas Dragon Shield 100: Matte Blanco",
+        "category": "Accessorios",
+        "price": 11990,
+        "img": "/imgs/accessories/Product_103.png",
+        "description": "Protector tamaño standard, transparente por el frente y verde en el dorso. Contiene 100 unidades. Su color mate es una linea popular de texturas de Dragon Shield, una combinación perfecta de durabilidad y posibilidad de baraja fácil.",
+        "quantity": 10,
+        "cartQuantity": 0,
+        "fav": false
+    },
+    {
+        "id": 104,
+        "user": "Siana Store",
+        "title": "Protectores de cartas Dragon Shield 100: Matte Negro",
+        "category": "Accessorios",
+        "price": 11990,
+        "img": "/imgs/accessories/Product_104.png",
+        "description": "Protector tamaño standard, transparente por el frente y verde en el dorso. Contiene 100 unidades. Su color mate es una linea popular de texturas de Dragon Shield, una combinación perfecta de durabilidad y posibilidad de baraja fácil.",
+        "quantity": 10,
+        "cartQuantity": 0,
+        "fav": false
+    }
+]

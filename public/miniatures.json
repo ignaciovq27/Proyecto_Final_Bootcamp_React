@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1001,
+        "user": "Games Workshop",
+        "title": "Set miniaturas iniciales - Warhammer Fantasy",
+        "category": "Miniaturas",
+        "price": 8990,
+        "img": "/imgs/miniatures/Product_1001.png",
+        "description": "Si estas comenzando a armar tu ejercito de criaturas mágicas en el mundo de Warhammer Fantasy, este set te vendrá de maravilla. Dirige a unos temibles trols o usa el poder mágico de los elfos oscuros con la colección de 6 miniaturas listas para personalizar y darles todos los detalles unicos de tu ejército.",
+        "quantity": 50,
+        "cartQuantity": 0,
+        "fav": false
+    },
+    {
+        "id": 1002,
+        "user": "Games Workshop",
+        "title": "Edición especial Roboute Guilliman - Warhammer 40K Collection Ultramarines",
+        "category": "Miniaturas",
+        "price": 29990,
+        "img": "/imgs/miniatures/Product_1002.png",
+        "description": "Estratega, héroe, hijo vengador. Roboute Guilliman es el Primarca de los Ultramarines, Señor de Ultramar, y un líder incomparable de la humanidad. Resucitado por los Adeptus Mechanicus y los Ynnari, pretende unificar las fuerzas del Imperium y hacer retroceder a los secuaces de los Dioses Oscuros. Superando en altura incluso a los heroicos hermanos de batalla de su Capítulo, Guilliman se encamina a la guerra con expresión severa. Es una miniatura de tamaño impresionante, cuya cabeza y hombros superan en altura a los Primaris Space Marines, y tiene un sinfín de detalles: la Armadura del Destino que recubre su cuerpo está cubierta de hermosas filigranas ornamentadas en todas sus piezas, con áquilas esculpidas, sellos de pureza, cráneos y emblemas de los Ultramarines en cada superficie. Tienes la opción de montar a Guilliman con la cabeza descubierta, o con un casco de aspecto agresivo; ambas alternativas cuentan con una corona de laurel. Esta miniatura se compone de 44 piezas, e incluye una peana redonda Citadel de 60 mm esculpida, que representa a Guilliman sobre una águila imperial rota, flanqueado por dos antorchas ardientes.",
+        "quantity": 3,
+        "cartQuantity": 0,
+        "fav": false
+    }
+]

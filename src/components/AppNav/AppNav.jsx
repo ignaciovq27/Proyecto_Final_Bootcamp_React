@@ -25,11 +25,12 @@ import AppButton from '../AppButton/AppButton';
 import AppIconButton from '../AppIconButton/AppIconButton';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AppImg from '../AppImg/AppImg';
+import { Avatar } from '@mui/material';
 
 // export component
 export default function AppNav() {
   const { user, logOut } = useContext(ContextUser);
-  const { productsCount } = useContext(ContextProduct);
+  const { productsCount,} = useContext(ContextProduct);
 
   const { favourites } = useContext(ContextFavourite);
 
@@ -150,6 +151,7 @@ export default function AppNav() {
         >
           <MenuItem
             sx={{ py: 2, textDecoration: "none", }}
+          // onClick={handleMenuClose}
           > INICIAR SESIÓN </MenuItem>
         </Typography>
       ) : null}
@@ -186,6 +188,34 @@ export default function AppNav() {
           sx={{ display: 'block', py: 2, textDecoration: "none", }}
           onClick={handleMobileMenuClose}
         > JUEGOS DE MESA </MenuItem>
+      </Typography>
+
+      <Typography
+        color="secondary"
+        component={Link}
+        to="/gallery-accessories"
+        noWrap
+        align='center'
+        sx={{ display: 'block', my: 0, px: 0, textDecoration: "none", }}
+      >
+        <MenuItem
+          sx={{ display: 'block', py: 2, textDecoration: "none", }}
+          onClick={handleMobileMenuClose}
+        > ACCESORIOS </MenuItem>
+      </Typography>
+
+      <Typography
+        color="secondary"
+        component={Link}
+        to="/gallery-miniatures"
+        noWrap
+        align='center'
+        sx={{ display: 'block', my: 0, px: 0, textDecoration: "none", }}
+      >
+        <MenuItem
+          sx={{ display: 'block', py: 2, textDecoration: "none", }}
+          onClick={handleMobileMenuClose}
+        > MINIATURAS </MenuItem>
       </Typography>
 
       {user ? (
@@ -276,7 +306,9 @@ export default function AppNav() {
             aria-controls={menuId}
             aria-haspopup="true"
             color="primary">
-            <AccountCircle />
+            {user ? <Avatar alt="userProfileImg_00" src={user.profileImg}
+              sx={{ width: "auto", height: 25, display: "flex", p: 0, m: 0, textAlign: "center", justifyContent: "center", alignItems: "center", alignContent: "center" }} />
+              : <AccountCircle />}
           </IconButton>
           USUARIO <ArrowDropDownIcon />
         </MenuItem>
@@ -299,21 +331,28 @@ export default function AppNav() {
             <AppButton text="JUEGOS DE MESA"
               to="/gallery-boardgames"
               className={({ isActive }) => (isActive ? 'active' : 'inactive')} />
+            <AppButton text="ACCESORIOS"
+              to="/gallery-accessories"
+              className={({ isActive }) => (isActive ? 'active' : 'inactive')} />
+            <AppButton text="MINIATURAS"
+              to="/gallery-miniatures"
+              className={({ isActive }) => (isActive ? 'active' : 'inactive')} />
           </Box>
-          {/*  */}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {user ? (
               <>
                 <AppButton text="DASHBOARD" to="/user-dashboard" />
-
                 <AppIconButton icon={<FavoriteIcon />} to="/user-favourites" count={favourites.length} component={NavLink} className={({ isActive }) => (isActive ? 'active' : 'inactive')} />
               </>
             ) : null}
 
             <AppIconButton icon={<ShoppingCartIcon />} to="/user-cart" count={productsCount}
+              // maxCount={9}
               component={NavLink} />
-            <AppIconButton icon={<AccountCircle />} count={0}
+            <AppIconButton icon={user ? <Avatar alt="userProfileImg_00" src={user.profileImg}
+              sx={{ width: "auto", height: 25, display: "flex", p: 0, m: 0, textAlign: "center", justifyContent: "center", alignItems: "center", alignContent: "center" }} />
+              : <AccountCircle />} count={0}
               onClick={handleProfileMenuOpen} />
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

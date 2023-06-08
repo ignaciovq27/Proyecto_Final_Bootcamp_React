@@ -2,6 +2,7 @@
 
 //components
 import Typography from '@mui/material/Typography';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function AppImg({ to, width, src, alt, imgClass, px, py, display, component }) {
     return (

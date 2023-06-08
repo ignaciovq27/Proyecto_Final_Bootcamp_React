@@ -1,5 +1,5 @@
 //css
-import "./AppGalleryBoardgames.css"
+import "./AppGalleryMiniatures.css"
 
 //components
 import { useState } from "react";
@@ -16,8 +16,8 @@ import AppFilters from "../AppFilters/AppFilters";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-export default function AppGalleryBoardgames() {
-    const { products } = useContext(ContextProduct);
+export default function AppGalleryMiniatures() {
+    const { miniatures } = useContext(ContextProduct);
     const { favourites, addFavourites, deleteFavourites } = useContext(ContextFavourite);
     const [searchText, setSearchText] = useState("")
 
@@ -94,17 +94,17 @@ export default function AppGalleryBoardgames() {
                     pb: "20px",
                     fontSize: { xs: "28px", sm: "30px", md: "34px" }
                 }}
-            >✧ JUEGOS DE MESA ✧
+            >✧ MINIATURAS ✧
             </Typography>
 
             <AppFilters
                 infoText="PUBLICACIONES: "
-                infoTextLength={products.length}
+                infoTextLength={miniatures.length}
                 searchTextNav={searchText}
                 setSearchTextNav={setSearchText}
                 handleOnChangeSort={handleOnChange}
                 searchOrderSort={searchOrder}
-                searchPlaceholder="Splendor..."
+                searchPlaceholder="Set miniaturas..."
             />
 
             <Container
@@ -132,32 +132,31 @@ export default function AppGalleryBoardgames() {
                         alignItems={"center"}
                         alignContent={"center"}
                     >
-                        {products
+                        {miniatures
                             .sort((a, b) => logicOrder(a, b))
-                            .filter((product) => product.title.toUpperCase().includes(searchText.toUpperCase().trim()))
-                            .map((product, i) => {
-                                const likeStatus = product.fav;
+                            .filter((miniature) => miniature.title.toUpperCase().includes(searchText.toUpperCase().trim()))
+                            .map((miniature, i) => {
+                                const likeStatus = miniature.fav;
                                 return (
                                     <AppCardProduct
-                                        key={product.id}
-                                        productId={product.id}
-                                        productImg={product.img}
-                                        productUser={product.user}
-                                        productTitle={product.title}
-                                        productPrice={product.price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}
-                                        productDescription={product.description}
-                                        toDetailProduct={`/product-details/${product.id}`}
+                                        key={miniature.id}
+                                        productId={miniature.id}
+                                        productImg={miniature.img}
+                                        productUser={miniature.user}
+                                        productTitle={miniature.title}
+                                        productPrice={miniature.price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}
+                                        productDescription={miniature.description}
+                                        toDetailProduct={`/miniature-details/${miniature.id}`}
                                         onClickFavourite={() => {
-                                            const product = products[i];
-                                            if (product.fav) {
-                                                product.fav = false;
-                                                deleteFavourites(product.id)
+                                            const miniature = miniatures[i];
+                                            if (miniature.fav) {
+                                                miniature.fav = false;
+                                                deleteFavourites(miniature.id)
                                             } else {
-                                                product.fav = true;
-                                                addFavourites(product);
+                                                miniature.fav = true;
+                                                addFavourites(miniature);
                                             }
                                         }}
-
                                         favouriteIconShow={likeStatus ?
                                             (<FavoriteIcon size="large" />)
                                             : (<FavoriteBorderIcon size="large" />)}

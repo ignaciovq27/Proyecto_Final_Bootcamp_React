@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { useContext } from "react";
 import { ContextUser } from '../../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 import { Box, IconButton, InputAdornment, Typography } from "@mui/material";
 import { Button } from "@mui/material";
@@ -18,9 +19,11 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AppImg from "../AppImg/AppImg";
 import EditIcon from '@mui/icons-material/Edit';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import { Alert, AlertTitle, Snackbar } from "@mui/material";
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+
 
 export default function AppUserProfile() {
     const { user } = useContext(ContextUser);
@@ -31,8 +34,37 @@ export default function AppUserProfile() {
         event.preventDefault();
     };
 
+    const [showAlert, setShowAlert] = useState({
+        open: true,
+        vertical: 'bottom',
+        horizontal: 'right'
+    })
+    const { open, vertical, horizontal } = showAlert;
+
     return (
         <>
+            {user ? (
+                vertical && horizontal && (
+                    <Snackbar
+                        anchorOrigin={{ vertical, horizontal }}
+                        open={open}
+                        autoHideDuration={10000}
+                        onClose={() => setShowAlert(false)}
+                        key={vertical + horizontal}
+                    >
+                        <Alert
+                            variant="filled"
+                            severity="info"
+                            onClose={() => { setShowAlert(false) }
+                            }
+                        >
+                            <AlertTitle><strong>¡BIENVENIDO!</strong></AlertTitle>
+                            Visita <strong>DASHBOARD</strong> para crear una nueva publicación <AutoAwesomeIcon />.
+                        </Alert>
+                    </Snackbar>
+                )
+            ) : null}
+
             <Typography
                 disabled={false}
                 variant="h4"

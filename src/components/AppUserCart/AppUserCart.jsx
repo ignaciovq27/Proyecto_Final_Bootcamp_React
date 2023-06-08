@@ -26,6 +26,7 @@ export default function AppUserCart() {
         setProductsCount, } = useContext(ContextProduct);
 
     useEffect(() => {
+        console.log(cartItems)
     }, [cartItems]);
 
     return (
@@ -64,7 +65,6 @@ export default function AppUserCart() {
                         m: "0", p: "0",
                         mt: 1,
                     }}
-                // className="userCard-style"
                 >
                     {cartItems.map((item, i) => {
                         const productMaxQuantity = parseInt(item.quantity);
@@ -73,8 +73,10 @@ export default function AppUserCart() {
                                 setCartAmount((productCartAmount) => (productCartAmount + item.price))
                                 item.cartQuantity = Math.min(item.cartQuantity + 1, productMaxQuantity)
                                 setProductsCount((productsCount) => Math.min(productsCount + 1))
+                                console.log(cartItems)
 
                             } else {
+                                console.log("Se ha alcanzado el límite máximo de cantidad de productos.")
                             }
                         }
 

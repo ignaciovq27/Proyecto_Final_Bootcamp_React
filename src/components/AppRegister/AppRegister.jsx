@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { ContextUser } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 
-import { Box, IconButton, InputAdornment, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
 import AccountCircle from '@mui/icons-material/AccountCircle';
@@ -31,10 +31,11 @@ export default function AppRegister() {
         passwordRepeat,
         setPasswordRepeat,
         profileImg,
-        setProfileImg,
         register } = useContext(ContextUser);
+
     const navigate = useNavigate()
     const [nameError, setNameError] = useState(false);
+
 
 
     const handleSubmit = (e) => {
@@ -116,6 +117,7 @@ export default function AppRegister() {
                         <AccountCircle
                             color="primary"
                             sx={{ my: 0.5 }} />
+
                         <TextField
                             id="name"
                             label="NOMBRE DE USUARIO"

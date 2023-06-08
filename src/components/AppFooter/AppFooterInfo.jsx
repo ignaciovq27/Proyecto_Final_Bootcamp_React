@@ -4,6 +4,7 @@ import "./AppFooter.css"
 //components
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
+import { Link, NavLink } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import AppIconButton from "../AppIconButton/AppIconButton";

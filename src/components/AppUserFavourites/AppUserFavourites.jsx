@@ -4,7 +4,6 @@ import "./AppUserFavourites.css"
 //components
 import { useState } from "react";
 import { useContext } from "react";
-import { ContextProduct } from '../../context/ProductContext';
 import { ContextFavourite } from '../../context/FavouriteContext';
 
 import { Box, Typography } from "@mui/material";
@@ -22,19 +21,24 @@ export default function AppUserFavourites() {
 
     const [searchOrder, setsearchOrder] = useState(0);
 
+
     const handleOnChange = (event) => {
         setsearchOrder(event.target.value);
         if (event.target.value === 0) {
             setSortOrder(0);
+            console.log("sort 0");
         }
         if (event.target.value === 1) {
             setSortOrder(1);
+            console.log("sort 1");
         }
         if (event.target.value === 2) {
             setSortOrder(2);
+            console.log("sort 2");
         }
         if (event.target.value === 3) {
             setSortOrder(3);
+            console.log("sort 3");
         }
     }
 
@@ -99,6 +103,8 @@ export default function AppUserFavourites() {
                 setSearchTextNav={setSearchText}
                 handleOnChangeSort={handleOnChange}
                 searchOrderSort={searchOrder}
+                searchPlaceholder="Catan..."
+
             />
 
             <Container
@@ -140,6 +146,7 @@ export default function AppUserFavourites() {
                                         productTitle={favourite.title}
                                         productPrice={favourite.price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}
                                         productDescription={favourite.description}
+                                        toDetailProduct={`/product-details/${favourite.id}`}
                                         onClickFavourite={() => {
                                             const favourite = favourites[i];
                                             if (favourite.fav) {

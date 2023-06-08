@@ -5,14 +5,15 @@ import './AppFilters.css'
 import { useContext } from "react";
 import { ContextProduct } from "../../context/ProductContext";
 
-// import { Link, NavLink } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
-import { Box, FormControl, FormHelperText, InputAdornment, MenuItem, Select } from "@mui/material";
+import { Box, FormControl, InputAdornment, MenuItem } from "@mui/material";
 import { TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import SortIcon from '@mui/icons-material/Sort';
 
-export default function AppFilters({ infoText, infoTextLength, searchTextNav, setSearchTextNav, searchOrderSort, handleOnChangeSort }) {
+export default function AppFilters({ infoText, infoTextLength, searchTextNav, setSearchTextNav, searchOrderSort, handleOnChangeSort, searchPlaceholder }) {
+    const { products } = useContext(ContextProduct);
+
     return (
         <>
             <Box
@@ -60,7 +61,7 @@ export default function AppFilters({ infoText, infoTextLength, searchTextNav, se
                         label="BUSCAR POR NOMBRE"
                         type="text"
                         variant="outlined"
-                        placeholder="Splendor..."
+                        placeholder={searchPlaceholder}
                         color="primary"
                         onChange={(e) => setSearchTextNav(e.target.value.trimStart())}
                         value={searchTextNav}

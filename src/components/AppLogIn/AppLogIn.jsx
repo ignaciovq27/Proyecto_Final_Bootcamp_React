@@ -21,8 +21,6 @@ import LoginIcon from '@mui/icons-material/Login';
 export default function AppLogIn() {
 
     const {
-        user,
-        name,
         setName,
         email,
         setEmail,
@@ -39,9 +37,12 @@ export default function AppLogIn() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        console.log("mail ingresado: " + email)
+        console.log("password ingresado: " + password)
         const user = await logIn(email, password)
         if (user) {
             setName(user.name)
+            console.log("Ingresó usuario: " + user.name)
             return navigate("/user-profile")
         }
 

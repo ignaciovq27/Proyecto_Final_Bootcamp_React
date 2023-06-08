@@ -2,7 +2,6 @@
 import "./AppProductCart.css"
 
 //components
-import { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { Button } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
@@ -21,9 +20,9 @@ export default function AppCardDashboard({
     productCartQuantity,
     productCartTotal,
     handleCartIncrement,
-    handleCartDecrement,
-}) {
+    handleCartDecrement, })
 
+    {
     return (
         <>
             <Card

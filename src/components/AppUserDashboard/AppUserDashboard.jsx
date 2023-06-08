@@ -35,7 +35,11 @@ export default function AppUserDashboard() {
             }
         }
         const userProducts = products.sort(sortById).filter(product => product.userId === user.userId);
+        console.log(user.userId)
+        console.log(products[0].userId)
+
         setuserProductsCount(userProducts.length);
+        console.log(products)
     }, [products, user.userId]);
 
     return (

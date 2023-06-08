@@ -17,8 +17,9 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 export default function ProductDetails() {
   const { products } = useContext(ContextProduct);
   const navigate = useNavigate();
-  const { favourites, addFavourites, deleteFavourites } = useContext(ContextFavourite);
+  const { addFavourites, deleteFavourites } = useContext(ContextFavourite);
 
+  // ------------------------------------
   const params = useParams()
   const [product, setProduct] = useState(null);
   const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -61,11 +62,9 @@ export default function ProductDetails() {
             if (product.fav) {
               product.fav = false;
               deleteFavourites(product.id);
-              console.log("Eliminado de Favoritos");
             } else {
               product.fav = true;
               addFavourites(product);
-              console.log("Agregado a favoritos");
             }
           }}
           favouriteIconShow={

@@ -1,0 +1,24 @@
+[
+    {
+        "id": 14,
+        "user": "Asmodee",
+        "title": "Marvel Champions",
+        "category": "Juegos de mesa",
+        "price": 70990,
+        "img": "public/imgs/products/Product_14.png",
+        "description": "Marvel Champions: El juego de cartas es un Living Card Game® cooperativo que los invita a encarnar a los superhéroes más emblemáticos del mundo. ¡Con el contenido de esta caja básica, hasta cuatro jugadores podrán combinar sus esfuerzos para frustrar los perversos planes de tres Villanos diferentes! Usen sus extraordinarios poderes para combatir a las fuerzas del mal y vivir la experiencia del Universo Marvel como nunca antes. ¡Además, al ser un Living Card Game®, se publicarán con regularidad nuevos personajes, desafíos y aventuras que pondrán a prueba su madera de héroes!",
+        "quantity": 1,
+        "fav": false
+    },
+    {
+        "id": 15,
+        "user": "Edge",
+        "title": "Nemesis",
+        "category": "Juegos de mesa",
+        "price": 182990,
+        "img": "public/imgs/products/Product_15.png",
+        "description": "Nemesis es un juego de supervivencia espacial para 1 a 5 jugadores con increíbles miniaturas y unas reglas intuitivas y de gran trasfondo. Estas reglas incluyen la cooperación, el engaño y la traición entre los jugadores, además de los elementos clásicos de una aventura de terror en un entorno de ciencia ficción. La tripulación de la Nemesis se despierta de la hibernación. El informe de daños señala la existencia de una avería crítica y que la nave no puede continuar su viaje. Tu misión es encontrar la avería, reparar los daños y volver a la Tierra a salvo. El problema: un miembro de la tripulación está muerto. Alguien destrozó su cápsula de hibernación y arrancó de allí su cuerpo. Y las cosas van a peor, oyes ruidos extraños en los vastos pasillos de la nave. Son sonidos que no habías escuchado antes. Cuando te enfrentes al horror, ¿en quién podrás confiar?",
+        "quantity": 2,
+        "fav": false
+    }
+]

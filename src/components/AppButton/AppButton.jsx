@@ -2,11 +2,11 @@
 import './AppButton.css'
 
 //components
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-export default function AppButton({ text, to, isActive }) {
+export default function AppButton({ text, to, isActive, isDisabled }) {
     return (
         <Typography
             component={NavLink}
@@ -22,7 +22,7 @@ export default function AppButton({ text, to, isActive }) {
             }}
         >
             <Button
-                disabled={false}
+                disabled={isDisabled}
                 color="inherit"
                 size="small"
                 className='button-style'

@@ -2,14 +2,15 @@
 import "./AppUserProfileEdit.css"
 
 //components
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useState } from "react";
 import { useEffect } from 'react';
 import { useContext } from "react";
 import { ContextUser } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 
-import { Box, IconButton, InputAdornment, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
+import { Container } from '@mui/material';
 import { Grid } from '@mui/material';
 import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
@@ -30,7 +31,6 @@ export default function AppUserProfileEdit() {
 
     const {
         user,
-        // register,
         editProfile,
         name,
         setName,
@@ -50,6 +50,9 @@ export default function AppUserProfileEdit() {
 
     useEffect(() => {
         if (user) {
+            setName("")
+            setPassword("")
+            setPasswordRepeat("")
             setName(user.name)
             setEmail(user.email)
             setPassword(user.password)
@@ -81,11 +84,6 @@ export default function AppUserProfileEdit() {
             return alert("error: Debe completar todos los registros.")
         }
 
-        // if (password !== user.password) {
-        //     setPasswordError(true);
-        //     return alert("Error de datos de contraseña.");
-        // }
-
         editProfile({
             userId: user.userId,
             name,
@@ -112,7 +110,6 @@ export default function AppUserProfileEdit() {
     const handleMouseDownPasswordRepeat = (event) => {
         event.preventDefault();
     };
-
 
     return (
         <>
@@ -229,6 +226,7 @@ export default function AppUserProfileEdit() {
                                             variant="outlined"
                                             required
                                             error={false}
+                                            disabled
                                             defaultValue={user.email}
                                             onChange={(e) => setEmail(e.target.value)}
                                             color="primary"
@@ -360,6 +358,9 @@ export default function AppUserProfileEdit() {
                             variant="contained"
                             size="small"
                             color="warning"
+                            disabled={
+                                (name !== "" && email !== "" && password !== "" && passwordRepeat !== "") ? false : true
+                            }
                             sx={{
                                 mt: 1,
                                 mb: 1,
