@@ -2,8 +2,8 @@
  # PROYECTO FINAL REACT ( Módulo 06 Bootcamp - FRONT END)
 ## Desafío: Desarrollo de sitio tipo Marketplace usando React y MUI.
 ## Build: https://modulo06-proyectofinal-hito03.netlify.app/
-## HITO 4: Video de presentación del proyecto: https://youtu.be/8hv2n72GJm4
-## HITO 3: Desarrollo de lógica para:
+## Video de presentación del proyecto: https://youtu.be/8hv2n72GJm4
+## Características:
 ### · Filtrado de publicaciones (lista de productos) por nombre.
 ### · Ordenamiento de publicaciones (lista de productos) por selección del usuario (orden alfabético - precio)
 ### · Validación de campos en formularios ( tipo email, comparación de contraseñas, limite de caracteres en nombre de usuario, inputs vacios )
