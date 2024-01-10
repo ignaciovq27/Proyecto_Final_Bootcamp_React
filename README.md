@@ -1,5 +1,9 @@
 
- # PROYECTO FINAL REACT ( Módulo 06 Bootcamp - FRONT END)
+ # DADOZUL MARKETPLACE (Módulo 06 Proyecto Final Bootcamp - FRONT END REACT)
+
+<img src="public/imgs/Logo_03.png" alt="DadoAzul_Logo.png" width="450" height="auto">
+
+ 
 ## Desafío: Desarrollo de sitio tipo Marketplace usando React y Material UI.
 ## Build: https://modulo06-proyectofinal-hito03.netlify.app/
 ## Video de presentación del proyecto: https://youtu.be/8hv2n72GJm4
