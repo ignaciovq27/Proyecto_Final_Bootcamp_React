@@ -1,6 +1,6 @@
 
  # PROYECTO FINAL REACT ( Módulo 06 Bootcamp - FRONT END)
-## Desafío: Desarrollo de sitio tipo Marketplace usando React y MUI.
+## Desafío: Desarrollo de sitio tipo Marketplace usando React y Material UI.
 ## Build: https://modulo06-proyectofinal-hito03.netlify.app/
 ## Video de presentación del proyecto: https://youtu.be/8hv2n72GJm4
 ## Características:
