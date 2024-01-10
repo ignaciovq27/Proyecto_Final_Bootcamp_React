@@ -14,4 +14,3 @@
 ### · Añadir y organizar productos en carrito de compra.
 ### · Persistencia de datos con localStorage para productos y usuarios logeados.
 ### · Tamaños responsivos para distintos dispositivos.
--
