@@ -1,5 +1,5 @@
 
- # DADOZUL MARKETPLACE (Módulo 06 Proyecto Final Bootcamp - FRONT END REACT)
+ # DADOZUL MARKETPLACE (Módulo 06 Proyecto Final Bootcamp - Front-end React)
 
 <img src="public/imgs/Logo_03.png" alt="DadoAzul_Logo.png" width="450" height="auto">
 
