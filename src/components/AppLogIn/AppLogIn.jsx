@@ -106,6 +106,7 @@ export default function AppLogIn() {
                             type="email"
                             variant="outlined"
                             required
+                            placeholder="ignacio@mail.cl"
                             helperText={emailError
                                 ? ("Ingrese un correo valido.")
                                 : null}
@@ -126,6 +127,7 @@ export default function AppLogIn() {
                             type={showPassword ? 'text' : 'password'}
                             variant="outlined"
                             required
+                            placeholder="ignacio"
                             helperText={passwordError
                                 ? ("La contraseña no es correcta.")
                                 : null}

@@ -1,4 +1,4 @@
-import "./AppProductDetails.css";
+import "./AppMiniatureDetails.css";
 
 import { useEffect, useState } from "react";
 import { useContext } from "react";
@@ -18,7 +18,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
-export default function AppProductDetails({
+export default function AppMiniatureDetails({
     productId,
     productUser,
     productTitle,
@@ -32,8 +32,6 @@ export default function AppProductDetails({
 }) {
     const { user } = useContext(ContextUser);
     const {
-        products,
-        accessories,
         miniatures,
         cartItems,
         setCartAmount,
@@ -62,7 +60,7 @@ export default function AppProductDetails({
 
     return (
         <>
-            {products.map((product, i) => {
+            {miniatures.map((product, i) => {
 
                 const HandleOnClick = (e) => {
                     setCartAmount((cartAmount) => cartAmount + (product.price * count));

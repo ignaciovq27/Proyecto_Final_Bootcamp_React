@@ -1,4 +1,4 @@
-import "./AppProductDetails.css";
+import "./AppAccessorieDetails.css";
 
 import { useEffect, useState } from "react";
 import { useContext } from "react";
@@ -18,7 +18,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
-export default function AppProductDetails({
+export default function AppAccessorieDetails({
     productId,
     productUser,
     productTitle,
@@ -62,7 +62,7 @@ export default function AppProductDetails({
 
     return (
         <>
-            {products.map((product, i) => {
+            {accessories.map((product, i) => {
 
                 const HandleOnClick = (e) => {
                     setCartAmount((cartAmount) => cartAmount + (product.price * count));

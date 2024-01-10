@@ -30,7 +30,7 @@ import { Avatar } from '@mui/material';
 // export component
 export default function AppNav() {
   const { user, logOut } = useContext(ContextUser);
-  const { productsCount,} = useContext(ContextProduct);
+  const { productsCount, } = useContext(ContextProduct);
 
   const { favourites } = useContext(ContextFavourite);
 

@@ -25,6 +25,8 @@ import GalleryBoardgames from './views/GalleryBoardgames/GalleryBoardgames';
 import GalleryAccessories from './views/GalleryAccessories/GalleryAccessories';
 import GalleryMiniatures from './views/GalleryMiniatures/GalleryMiniatures';
 import ProductDetails from './views/ProductDetails/ProductDetails';
+import AccesorieDetails from './views/AccesorieDetails/AccesorieDetails';
+import MiniatureDetails from './views/MiniatureDetails/MiniatureDetails';
 import NotFound from './views/NotFound/NotFound';
 
 function App() {
@@ -109,12 +111,12 @@ function App() {
 
             <Route
               path="/accessorie-details/:id"
-              element={<ProductDetails />}
+              element={<AccesorieDetails />}
             />
 
             <Route
               path="/miniature-details/:id"
-              element={<ProductDetails />}
+              element={<MiniatureDetails />}
             />
 
             <Route path='*' element={<NotFound />} />
