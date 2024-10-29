@@ -1,5 +1,5 @@
 
- # DADOZUL MARKETPLACE (Módulo 06 Proyecto Final Bootcamp - Front-end React)
+ # DADOZUL MARKETPLACE | Frontend React
 
 <img src="public/imgs/Logo_03.png" alt="DadoAzul_Logo.png" width="450" height="auto">
 
@@ -7,6 +7,7 @@
 ## Desafío: Desarrollo de sitio tipo Marketplace usando React y Material UI.
 ## Build: https://modulo06-proyectofinal-hito03.netlify.app/
 ## Video de presentación del proyecto: https://youtu.be/8hv2n72GJm4
+## Investigación y desarrollo visual diseño UXUI: https://www.behance.net/gallery/209437811/DADOAZUL-MARKETPLACE-WEB
 ## Características:
 ### · Filtrado de publicaciones (lista de productos) por nombre.
 ### · Ordenamiento de publicaciones (lista de productos) por selección del usuario (orden alfabético - precio)
